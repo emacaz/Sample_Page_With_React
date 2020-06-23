@@ -39,6 +39,17 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ]
+      },
+      {
+        test: /\.(png|gif|jpg)$/, //Cualquier elemento que coincida con png, gif,jpg, va a ser usado en el proyecto
+        use: [
+          {
+            'loader': 'file-loader',
+            options: {
+              name: 'assets/[hash].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
